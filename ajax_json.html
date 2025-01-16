@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX & JSON Example</title>
+    <style>
+      body { font-family: Arial, sans-serif; }
+      #users { margin-top: 20px; }
+    </style>
+    <body>
+        <h1>AJAX & JSON Example</h1>
+        <button id="fetchUsers">Fetch Users</button>
+        <div id="users"></div>
+        <script>
+            document.getElementById('fetchUsers').addEventListener('click', () =>{
+                //ajax requist
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET','https://jsonplaceholder.typicode.com/users',true);
+
+                xhr.onload = function (){
+                    if(xhr.status===200){
+                        const users = JSON.parse(xhr.responseText);  //Parse JSON response
+                        displayUsers(users); //Render users dynamically
+                    }else{
+                        console.error('error fetching data');
+                    }
+                };
+                xhr.send();
+            });
+
+            function displayUsers(users) {
+      const usersDiv = document.getElementById('users');
+      usersDiv.innerHTML = '<h2>User List:</h2>';
+      users.forEach(user => {
+        usersDiv.innerHTML += `
+          <p>
+            <strong>Name:</strong> ${user.name} <br>
+            <strong>Email:</strong> ${user.email} <br>
+            <strong>Address:</strong> ${user.address.city}, ${user.address.street}
+          </p>
+        `;
+      });
+            }
+        </script>
+    </body>
+  </head>
+</html>

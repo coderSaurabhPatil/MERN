@@ -1,0 +1,560 @@
+html (hyper text markup languavage)
+is a languavage describing page
+not a programming languavage
+uses markup tags to describe web pages
+
+-----------------------------------------------------------------------------
+
+
+most of web document are created using html
+document are saved with extension .html or .htm
+
+-----------------------------------------------------------------------------
+
+markup
+markup tags are string in the languavage surrouneded by a < and a > sign
+opening tag <html> and clousing tag </html>
+not case sensitive
+can have attributes which provides additional information about html element on your page 
+<body bgcolour="red">
+<table border="0">
+
+ex - html1.htm
+
+------------------------------------------------------------------------------
+
+HTML Head Secation contain information about the document. 
+the browser does not display this information
+to the user .follwing tags can be in the head section
+<base><linek><meta><script><style> and <title>
+
+
+-----------------------------------------------------------------------------
+
+Html body Section defines the document body contain all the contain all the content of the 
+document(like text,images,color,graphicas)
+
+
+<body> element
+each document can have at most one <body> element
+attributes used in <body> element are 
+bgcolour - gives a background color to html page.
+background - Use to specify images to the background
+text- specify the text colur throught the browser window
+Link,Alink,Vlink-used to specify link color,active link color & visited link color
+
+Example 
+<body text = " red"> or <body text=#FF0000>
+<body link="red" alink="blue" Vlink="blue">
+<body bgcolour="black"> or <body bgcolour="#000000">
+<body background = "http://www.mysite.edu/img1.gif>
+<body background="symbol.gif" text="red" link="blue" bgproperties="fixed">
+
+ex - html2.htm
+
+-------------------------------------------------------------------------------------------
+
+physical Character Effect
+
+Bold Font <b> .. </b>
+italic   <i> ... </i>
+Undefined <u> .. </u>
+strikethrough <strike> or <s>
+
+fixed width fount <tt> - normal text in fixed -width fount 
+subscript <sub>
+Superscript <sup>
+
+ex - html3.htm
+
+-------------------------------------------------------------------------------------------
+
+document body contains
+
+Body Text
+html truncates spaces in your text
+use <br> to insert new line
+use <p> tag to create paragraphas
+use <div> to hold division or a section in html document
+use <span> as an inline container to mark up a part of a text, or a part of a document
+
+comment in html document
+increase code readability; ignored by the browser.
+Example of html comment <!-- this is simple html comment -->
+
+ex - html4.htm
+
+--------------------------------------------------------------------------------------------
+
+logical Character Effect
+
+<hn> .. </hn>
+value of n can range from 1 to 6
+
+<h1 align="center">This is level 1 heading</h1>
+
+ex - html5.htm
+
+------------------------------------------------------------------------------------------
+
+Horizontal Lines in a Web Page 
+
+ <hr> - horixontal Rule. Attributes:
+Size: Line thickness <hr size=“5”>
+ Width: Line width either in pixels or % of browser window
+ <hr width=“100”> or <hr width=“60%”>
+ Align: Alignment values can be left, center or right <hr align=“center”>
+Color: to display colored horizontal lines. Eg <hr color=“red”>
+
+ex- html6.htm
+
+--------------------------------------------------------------------------------------------
+
+number list (ordered List)
+
+automatically generate number in frount of each item in the list
+number placed against an item depends on the location of the item in the list 
+To start an ordered list at a number other than 1, use START attribute:
+Example : <ol start=11> 
+
+Select the type of numbering system with the type attribute. Example:
+A-Uppercase letters. <OL TYPE=A>
+a-Lowercase letters. <OL TYPE=a>
+I-Uppercase Roman letters
+i-Lowercase Roman letters
+1-Standard numbers, defaul
+
+ex-html7.htm
+
+---------------------------------------------------------------------------------------------
+Bulleted List (Unordered List) 
+
+To change the type of bullet used throughout the list, place the TYPE attribute
+in the <UL> tag at the beginning of the list.
+DISC (default) gives bullet in disc form.
+SQUARE gives bullet in square form.
+CIRCLE gives bullet in circle for.
+
+ex- html8.htm
+
+---------------------------------------------------------------------------------------------
+
+Adding Image 
+Images are added into a document using <img> tag
+
+ Attributes of <img> tag are:
+alt: Alternative text to display for non-graphical browsers.
+align: Image horizontal alignment. Valid values: left, right, center.
+width/Height: Sets the width and height of the image.
+src: Specifies the image path or source. 
+<IMG src="home.png“ height="100“ width="200" >
+
+ex-html9.htm
+
+-----------------------------------------------------------------------------------------------
+
+
+Table 
+Use <table> tag to create a table. 
+Table Attributes:
+Border: <table border=“2”>………</table>
+Align: defines the horizontal alignment of the table element.
+Values of the align attribute are right, left and center. <table align=“center”>
+Width: defines the width of the table element.
+<table width=“75%”>………</table>
+<table width=“400”>………</table>
+ An HTML table has two kinds of cells:
+Header Cells <th>: Contain header information (created with <th> element) ; The text is
+bold and centered.
+Standard Cells <td>: Contain data (created with the td element) ; The text is regular and
+left-aligned. 
+
+
+ex-html10.htm
+
+
+------------------------------------------------------------------------------------
+Hyperlink
+Hyperlinks access resources on the internet.
+Create a link with <a href=“”> (anchor)
+
+<a href="http://www.mysite.com/login.htm">Login Here</a> 
+
+ex- html11.htm
+
+------------------------------------------------------------------------------------
+
+HTML Forms : Types of Form Fields 
+<form method=“get/post” action=“URL”>
+ Field definitions
+</form> 
+<input> tag is used to create form input fields.
+Type attribute of <input> tag specifies the field type
+Single line text box <input type=“text”>
+Password field <input type=“password”>
+Hidden field <input type=“hidden”>
+Radio button <input type=“radio”>
+Checkbox <input type=“checkbox”>
+File selector dialog box <input type=“file”>
+Button <input type=“button”>
+Submit/Reset <input type=“submit/reset”>
+ <textarea>
+<select>
+<button> 
+
+Single Line Text Fields: used to type letters, numbers, etc. in a form.
+<INPUT TYPE=”type” NAME=”name” SIZE=”number” VALUE=”value” maxlength=n>
+
+
+Text Area (Multiple Line Text Field)
+ A text area can hold an unlimited number of characters. Text renders in a fixed-width font
+(usually Courier).
+ You can specify text area size with cols and rows attributes.
+<textarea name=“name” rows=“10” cols=“50” [disabled] [readonly]>
+ Default-Text
+</textarea> 
+
+
+Check Box
+• Lets you select one or more options from a limited number of choices.
+<input type=“checkbox” name=“name” value=“value” [checked] [disabled]> Checkbox
+Label
+ Content of value attribute is sent to the form's action URL.
+17
+Radio Buttons
+<input type=“radio” name=“name” value=“value” [checked] [disabled]> Radio Button Label
+• Content of the value attribute is sent to the form's action URL.
+• Allows to pass information between forms:
+• <input type=“hidden” name=“name” size=“n” value=“value”/>
+• <input type=“hidden” name=“valid_user” size=“5” value=“yes”/>
+<input type=“checkbox” name=“color1” value=“0”/>Red
+<input type=“checkbox” name=“color3” value=“1” checked/>Green
+<form>
+<input type="radio" name="sex" value="male"/>Male<br>
+<input type="radio" name="sex" value="female"/> Female
+</form>
+Hidden Field
+Password Fields
+• <input type=“password” name=“name” size=n value=“value” [disabled]>
+ Eg: Enter the password:<input type=“password” name=“passwd” size=20 value=“abc”>
+18
+• <input type=“file” name=“name” size=“width of field” value=“value”>
+• To add a button to a form use:
+• <input type=“button” name=“btnCalculate” value=“Calculate”/>
+• To submit the contents of the form use:
+• <input type=“submit” name=“btnSubmit” value=“Submit”/>
+• To reset the field contents use:
+• <input type=“reset” name=“btnReset” value=“Reset”/>
+
+
+Drop-Down List
+<select name=“name” multiple=“true/false” size=n [disabled]>
+<option [selected] [disabled] [value]>Option 1</option>…
+</select>
+ Multiple: States if multiple element selection is allowed.
+ Size: Number of visible elements.
+ Disabled: States if the option is to be disabled after it first loads.
+Eg:
+19
+<form>
+<select multiple size="3" name="pref">
+<option value="ih" selected>Internet-HTML</option>
+<option value="js">Javascript</option>
+<option value="vbs">VBscript</option>
+<option value="as">ASP</option>
+<option value="xm">XML</option>
+<option value="jv">JAVA</option>
+<option value="jsp">jsp</option>
+</select>
+</form>
+
+ex - html12.htm
+
+----------------------------------------------------------------------------------------------
+
+HTML5
+
+HTML5 offers new enhanced set of tags
+New Content Tags : <nav>,<section>,<header>,<article>,<aside>,<summary>
+New Media Tags : <video>,<audio>
+New Dynamic drawing : <canvas>graphic tag
+New form controls, like calendar, date, time, email, url, search 
+
+Support for JavaScript APIs
+Canvas element for 2D drawing API
+Video and audio APIs
+APIs to support offline storages
+The Drag & Drop APIs
+The Geolocation API
+Web workers, WebSQL etc
+
+ New Content Tags
+
+ <nav>: Represents navigation links
+ <section>: Defines sections in a document.
+ <header>: Represents introductory content.
+ <article>: Self-contained, reusable content.
+ <aside>: Content indirectly related to the main content.
+ <summary>: Toggles visibility for the <details> element.
+
+ New Media Tags
+
+ <video> and <audio>: Embed multimedia like videos and sound.
+
+ Dynamic Graphics
+ <canvas>: A drawable region for 2D graphics.
+
+ New Form Controls
+
+ Native form elements for specific input types like date, time, email, url, and search.
+
+ JavaScript APIs
+
+ Canvas API: 2D drawing.
+ Audio/Video API: Play and manipulate multimedia.
+ Offline Storage: Store data locally (localStorage, sessionStorage).
+ Drag & Drop API: Enable drag-and-drop interactions.
+ Geolocation API: Retrieve user's location.
+ Web Workers and WebSQL: Background scripts and client-side storage.
+
+ex-html13.htm
+
+
+------------------------------------------------------------------------------------------
+
+css
+
+CSS (Cascading Style Sheets) is a language that defines how HTML elements are displayed
+ on a web page. It controls layout, colors, fonts, spacing, and much more. CSS enhances 
+ the appearance of a webpage by separating content (HTML) from design.
+
+
+CSS Syntax
+ A CSS rule consists of a selector and a declaration block.
+ selector {
+  property: value; /* Declaration */
+}
+
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+Three Ways to Insert CSS
+
+Inline CSS
+Styles are applied directly to an HTML element using the style attribute.
+<p style="color: red;">This is a red paragraph.</p>
+
+Internal CSS
+Defined within a <style> tag in the <head> section of the HTML file.
+
+External CSS    
+Stored in a separate file with a .css extension and linked to the HTML file using <link>.
+<link rel="stylesheet" href="styles.css">
+<p>This is styled using an external CSS file.</p>
+
+
+CSS Box Model
+The CSS Box Model is a concept used to describe the structure and layout of elements on a web page. Every element is treated as a rectangular box comprising the following layers:
+
+Content: The innermost area where text or images appear.
+Padding: Space between the content and the border.
+Border: The edge surrounding the padding (or content if padding is not set).
+Margin: The outermost space separating the element from neighboring elements.
+
+
+<html>
+<head>
+  <style>
+    div {
+      width: 200px;
+      padding: 20px;
+      border: 5px solid black;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>CSS Box Model Example</div>
+</body>
+</html>
+
+
+CSS Border
+The border property defines the border around an element. It has three main components:
+
+Border Width: Specifies the thickness.
+Border Style: Defines the type of the border (solid, dotted, dashed, etc.).
+Border Color: Specifies the color.
+
+<html>
+<head>
+  <style>
+    p {
+      border: 2px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <p>This paragraph has a blue border.</p>
+</body>
+</html>
+
+
+Types of Selectors:
+HTML Selectors (Element Selector):
+Targets HTML tags directly.
+
+css
+Copy code
+h1 {
+    color: blue;
+}
+This will change the color of all <h1> elements to blue.
+
+Class Selectors:
+Targets elements with a specific class. You define the class with a period (.) followed by the class name.
+
+css
+Copy code
+.highlight {
+    color: red;
+}
+HTML:
+
+html
+Copy code
+<p class="highlight">This paragraph is highlighted in red.</p>
+ID Selectors:
+Targets a unique element with a specific ID. You define the ID with a hash (#) followed by the ID name.
+
+css
+Copy code
+#header {
+    font-size: 24px;
+}
+HTML:
+
+html
+Copy code
+<div id="header">This is the header</div>
+
+ex-html14.htm
+
+------------------------------------------------------------------------------------------
+
+CSS Styling 
+
+CSS Background
+Background properties are used to style the background of elements.
+Common properties:
+background-color: Sets the background color.
+background-image: Specifies a background image.
+background-repeat: Controls how the background image repeats.
+background-position: Specifies the starting position of the background image.
+
+body {
+  background-image: url('img_tree.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+CSS Text
+Text properties are used to style the text within an element.
+Common properties:
+color: Sets the color of text.
+text-align: Aligns text (left, right, center, justify).
+text-decoration: Adds decoration (underline, line-through).
+text-transform: Controls text capitalization (uppercase, lowercase, capitalize).
+
+h1 {
+  text-align: center;
+  color: #00ff00;
+}
+p {
+  text-indent: 50px;
+}
+
+
+CSS Font Styling
+Font properties define the appearance of text.
+Common properties:
+font-family: Specifies the font.
+font-size: Sets the size of the font.
+font-weight: Defines the boldness of the font.
+font-style: Defines whether the font is italic.
+
+p {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+CSS List Styling
+List properties customize the appearance of list items.
+Common properties:
+list-style-type: Defines the marker (circle, square, etc.).
+list-style-image: Uses an image as a list item marker.
+list-style-position: Defines if the marker is inside or outside the content flow.
+
+
+CSS Box Model
+The box model consists of content, padding, border, and margin.
+margin: Space around the element.
+border: The border around the padding and content.
+padding: Space inside the element, between the border and content.
+content: The actual content of the element.
+
+div {
+  padding: 20px;
+  border: 1px solid black;
+  margin: 15px;
+}
+
+
+CSS Border
+Border properties define the border of elements.
+border-width: Defines the width of the border.
+border-style: Defines the style of the border (solid, dotted, dashed).
+border-color: Sets the color of the border.
+
+CSS Border Radius
+Border-radius allows for rounded corners on elements.
+Syntax: border-radius: value; where value can be in pixels, percentages, etc.
+Example:
+
+css
+Copy code
+div {
+  border-radius: 10px;
+}
+
+CSS Shadow Effects
+Shadow properties add shadow effects to text and elements.
+text-shadow: Applies shadow to text.
+box-shadow: Applies shadow to elements.
+Example:
+
+css
+Copy code
+p {
+  text-shadow: 2px 2px 5px red;
+  box-shadow: 5px 5px 10px grey;
+}
+
+
+ex-html15.htm
+
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

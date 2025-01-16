@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery Example</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <style>
+            #content {
+              width: 200px;
+              height: 100px;
+              background-color: lightblue;
+              text-align: center;
+              line-height: 100px;
+              margin: 20px auto;
+            }
+            .highlight {
+              background-color: yellow;
+              color: red;
+            }
+            </style>
+    </head>
+    <body>
+        <button id="changeText">change Text</button>
+        <button id="toggleStyle">Toggle Style</button>
+        <button id="toggleVisibility">Show/Hide</button>
+
+        <div id="content">Hello,jquery!</div>
+
+        <script>
+            $(document).ready(function(){
+                //change text on button click
+                $("#changeText").click(function(){
+                    $("#content").text("text Chenged!");
+                });
+
+                //Toggle a class to change styles
+                $("#toggleStyle").click(function(){
+                    $("#content").toggleClass("highlight");
+                });
+
+                //show/Hide the content
+                $("toggleVisibility").click(function(){
+                    $("#content").toggle();
+                })
+            })
+        </script>
+    </body>
+</html>

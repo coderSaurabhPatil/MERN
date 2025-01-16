@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Object Example</title>
+</head>
+<body>
+    <script>
+        // Creating strings
+        var str1 = "Hello";
+        var str2 = "World!";
+
+        // Using the length property
+        console.log("Length of str1: " + str1.length); // Output: 5
+        console.log("Length of str2: " + str2.length); // Output: 6
+
+        // Using charAt() method
+        console.log("First character of str1: " + str1.charAt(0)); // Output: H
+        console.log("Last character of str2: " + str2.charAt(str2.length - 1)); // Output: !
+
+        // Using concat() method
+        var combinedString = str1.concat(" ", str2);
+        console.log("Combined String: " + combinedString); // Output: Hello World!
+
+        // Displaying on the web page
+        document.write("<p>Length of str1: " + str1.length + "</p>");
+        document.write("<p>First character of str1: " + str1.charAt(0) + "</p>");
+        document.write("<p>Combined String: " + combinedString + "</p>");
+    </script>
+</body>
+</html>
+

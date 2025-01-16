@@ -1,0 +1,269 @@
+JavaScript is a lightweight, object-based scripting language used to make web pages dynamic.
+
+It is embedded in HTML and can be used for client-side validation, manipulating HTML elements, 
+reacting to events,
+ and more.
+
+  Data Types in JavaScript
+
+  Number: Represents numeric values.
+  String: A sequence of characters enclosed in quotes.
+  Boolean: Represents true or false.
+  Null: Represents the absence of a value.
+  Undefined: Represents a variable that has not been assigned a value.
+
+
+  Variables
+
+  Variables in JavaScript are loosely typed and do not require explicit type declarations.
+  Variables can be defined using var, let, or const.
+
+  let age = 25;  // Number
+  const name = "John";  // String
+  var isActive = true;  // Boolean
+
+
+  Operators
+
+  Arithmetic Operators: +, -, *, /, %
+  Comparison Operators: ==, ===, !=, >, <, >=, <=
+  Logical Operators: &&, ||, !
+
+  Control Structures
+  if-else: Executes a block of code based on a condition.
+  switch: Selects one of many code blocks based on a variable's value.
+
+  Loops
+  for loop: Repeats code a specified number of times.
+  while loop: Repeats code as long as a condition is true.
+
+  Functions
+  Functions are blocks of reusable code that can accept arguments and return a value.
+  Global and local variables define the scope of data within a function.
+
+  Predefined Functions
+
+  JavaScript provides built-in functions like parseInt(), parseFloat(),
+   isNaN(), and isFinite() to perform common tasks.
+
+   ex- js1.htm
+
+   --------------------------------------------------------------------------------------
+
+   String Objects in JavaScript
+
+   In JavaScript, string objects represent sequences of characters. 
+   Strings can be created and manipulated using various properties and methods.
+
+   There are two main ways to create a string in JavaScript:
+   Using the String constructor:
+   var myString = new String("characters");
+
+   Using string literals:
+   var myString = "fred";
+
+
+String Objects in JavaScript
+In JavaScript, string objects represent sequences of characters. Strings can be created and manipulated using various properties and methods.
+
+Creating a String Object
+There are two main ways to create a string in JavaScript:
+
+Using the String constructor:
+
+javascript
+Copy code
+var myString = new String("characters");
+This creates a string object explicitly.
+
+Using string literals:
+
+javascript
+Copy code
+var myString = "fred";
+This is the simpler and more common way to define strings in JavaScript.
+
+Properties of a String Object
+length
+Returns the number of characters in the string.
+var str = "Hello world!";
+console.log(str.length); // Output: 12
+
+String Object Methods
+charAt(index):
+Returns the character at a specified index (position) in a string.
+Indexing starts at 0.
+
+var str = "Hello world!";
+console.log(str.charAt(0)); // Output: H
+console.log(str.charAt(str.length - 1)); // Output: !
+
+concat():
+Joins two or more strings and returns the concatenated result.
+stringObject.concat(stringX, stringX, ..., stringX)
+
+ex-js2.htm
+
+=---------------------------------------------------------------------------------------------
+
+DOM (Document Object Model)
+
+Represents the structure of a web page as a tree of nodes.
+Used to dynamically manipulate the content, structure, and style of a web page.
+Main Object: document.
+BOM (Browser Object Model)
+
+Represents the browser environment and allows control over the browser's features (like history, location, and alerts).
+Provides methods and properties for interacting with the browser window.
+Main Object: window.
+
+ex-js3.htm
+
+----------------------------------------------------------------------------------------------
+
+
+Common Types of Events
+Mouse Events:
+
+click – Triggered when an element is clicked.
+dblclick – Triggered on a double-click.
+mouseover – Triggered when the mouse pointer hovers over an element.
+mouseout – Triggered when the mouse pointer leaves an element.
+Keyboard Events:
+
+keydown – Triggered when a key is pressed down.
+keyup – Triggered when a key is released.
+Form Events:
+
+submit – Triggered when a form is submitted.
+change – Triggered when the value of an input changes.
+focus – Triggered when an element gains focus.
+Window Events:
+
+load – Triggered when the entire page has loaded.
+resize – Triggered when the browser window is resized.
+Document Events:
+
+DOMContentLoaded – Triggered when the initial HTML document is fully loaded and parsed.
+
+ex - js4.htm
+
+----------------------------------------------------------------------------------------------
+
+Fetch API: Used to retrieve user data from a placeholder API (https://jsonplaceholder.typicode.com/users).
+Async/Await: Simplifies asynchronous code handling when fetching data.
+Promises: The fetch() API returns a promise, handled by async/await.
+Closures: createFilter() returns a function that remembers the list of users and filters them based on the search query.
+Destructuring: { name } used to extract only the name property from each user object for filtering.
+Arrow Functions: Used for concise function syntax in filtering users.
+Event Loop: Handles real-time search input dynamically (input event).
+Map, Filter, Reduce: filter() to filter users based on search query. map() to render users dynamically.
+Proxy: Used to track user actions (search queries) and log them each time a user types.
+LocalStorage: Stores the filtered users or preferences so that they can be reloaded on app startup.
+Template Literals: Used to dynamically generate HTML content for users.
+Event Handling: input event listener captures the search input and updates the displayed results.
+
+
+ex-js5.htm
+
+---------------------------------------------------------------------------------------------
+
+Regular Expressions (regex) are patterns used to match character combinations in strings. 
+They are commonly used for searching, replacing, and validating data.
+
+Creating a Regular Expression
+
+Literal Syntax:
+
+const regex = /pattern/flags;
+
+Constructor Syntax:
+
+const regex = new RegExp("pattern", "flags");
+
+
+Common Flags
+g: Global search (find all matches).
+i: Case-insensitive search.
+m: Multiline search.
+s: Dot (.) matches newline characters.
+u: Unicode support.
+y: Sticky search (matches starting at the current position).
+
+Common Regex Methods
+
+test(): Tests for a match and returns true or false.
+
+const regex = /hello/i;
+console.log(regex.test("Hello World")); // true
+
+exec(): Returns matched content or null.
+
+const regex = /hello/i;
+console.log(regex.exec("Hello World")); // ['Hello']
+
+ String Methods:
+match(): Finds matches.
+matchAll(): Returns all matches (useful with g flag).
+replace(): Replaces matched text.
+search(): Finds the first match index.
+split(): Splits a string by the regex.
+
+Regex Patterns
+
+Literal Characters:
+/abc/.test("abc"); // true
+
+Character Classes:
+
+\d: Any digit (0–9).
+\D: Any non-digit.
+\w: Any word character (alphanumeric + _).
+\W: Any non-word character.
+\s: Any whitespace.
+\S: Any non-whitespace.
+
+const regex = /\d+/g;
+console.log("My age is 25".match(regex)); // ['25']
+
+
+Anchors:
+
+^: Start of a string.
+$: End of a string
+
+const regex = /^hello$/i;
+console.log(regex.test("Hello")); // true
+
+Quantifiers:
+
+*: 0 or more.
++: 1 or more.
+?: 0 or 1.
+{n}: Exactly n occurrences.
+{n,}: At least n occurrences.
+{n,m}: Between n and m occurrences.
+
+const regex = /a{2,4}/;
+console.log(regex.test("aaa")); // true
+
+Groups and Captures:
+
+(...): Capturing group.
+(?:...): Non-capturing group.
+\1, \2: Backreferences.
+
+const regex = /(hello) \1/i;
+console.log(regex.test("hello hello")); // true
+
+Alternation (|):
+const regex = /cat|dog/;
+console.log(regex.test("I have a dog")); // true
+
+Escape Characters (\):
+
+
+const regex = /\./;
+console.log(regex.test("This is a dot.")); // true
+
+

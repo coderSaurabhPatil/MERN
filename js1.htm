@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <script type="text/javascript">
+        // Global variable
+        var globalVar = "I am a global variable!";
+        
+        // Function definition
+        function calculateArea(width, height) {
+            let area = width * height;  // Local variable
+            return area;
+        }
+
+        // Conditional statement
+        function checkAge(age) {
+            if (age >= 18) {
+                return "You are an adult.";
+            } else {
+                return "You are a minor.";
+            }
+        }
+
+        // Switch statement
+        function checkFruit(fruit) {
+            switch(fruit) {
+                case "apple":
+                    return "This is an apple.";
+                case "banana":
+                    return "This is a banana.";
+                default:
+                    return "Unknown fruit.";
+            }
+        }
+
+        // Predefined function usage
+        function parseValues() {
+            let intValue = parseInt("10.5");  // Parse integer
+            let floatValue = parseFloat("20.56 meters");  // Parse float
+            console.log("Parsed Integer: ", intValue);  // 10
+            console.log("Parsed Float: ", floatValue);  // 20.56
+        }
+
+        // Looping example (for loop)
+        function printNumbers() {
+            for (let i = 1; i <= 5; i++) {
+                console.log("Number: " + i);
+            }
+        }
+
+        // On load, display results
+        window.onload = function() {
+            console.log(globalVar);  // Accessing global variable
+            let area = calculateArea(5, 10);  // Calling function
+            console.log("Area: " + area);  // Display area
+            console.log(checkAge(20));  // Check age condition
+            console.log(checkFruit("apple"));  // Switch example
+            parseValues();  // Predefined function usage
+            printNumbers();  // Loop example
+        };
+    </script>
+</head>
+<body>
+    <h1>JavaScript Concepts Example</h1>
+    <p>This page demonstrates various JavaScript concepts.</p>
+</body>
+</html>

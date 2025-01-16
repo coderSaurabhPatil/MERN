@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Search Application</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #search-box { margin-bottom: 20px; width: 300px; padding: 8px; }
+    .user-card { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .user-card h2 { margin: 0; }
+  </style>
+</head>
+<body>
+  <h1>User Search Application</h1>
+  <input type="text" id="search-box" placeholder="Search for users..." />
+  <div id="user-container"></div>
+
+  <script type="module">
+    // Import functions
+    import { fetchUsers } from './api.js';
+    import { createFilter } from './filter.js';
+
+    const searchBox = document.getElementById('search-box');
+    const userContainer = document.getElementById('user-container');
+
+    // Proxy to log search queries
+    const searchLog = new Proxy({}, {
+      get: (target, query) => {
+        console.log(`User searched for: "${query}"`);
+        return query in target ? target[query] : 0;
+      },
+      set: (target, query, count) => {
+        target[query] = count;
+        return true;
+      }
+    });
+
+    // Load users from API
+    async function initializeApp() {
+      try {
+        const users = await fetchUsers();
+
+        // Store users in localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+
+        const filterUsers = createFilter(users);
+
+        // Event listener for search input
+        searchBox.addEventListener('input', () => {
+          const query = searchBox.value.trim().toLowerCase();
+          searchLog[query] = (searchLog[query] || 0) + 1; // Log searches
+          const filteredUsers = filterUsers(query); // Filter users
+          renderUsers(filteredUsers);
+        });
+
+        renderUsers(users); // Initial render
+      } catch (error) {
+        console.error('Error initializing app:', error);
+      }
+    }
+
+    // Render users with template literals
+    function renderUsers(users) {
+      userContainer.innerHTML = users
+        .map(user => `
+          <div class="user-card">
+            <h2>${user.name}</h2>
+            <p>Email: ${user.email}</p>
+            <p>Company: ${user.company.name}</p>
+          </div>
+        `)
+        .join('');
+    }
+
+    // Load from localStorage if available
+    const savedUsers = localStorage.getItem('users');
+    if (savedUsers) {
+      const users = JSON.parse(savedUsers);
+      renderUsers(users);
+    } else {
+      initializeApp();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Demo</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            header, nav, section, article, aside, footer {
+                border: 1px solid #ccc;
+                margin: 10px 0;
+                padding: 10px;
+            }
+            nav a {
+                margin-right: 15px;
+                text-decoration: none;
+                color: blue;
+            }
+            canvas {
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Welcome to Html5 Featres</h1>
+            <p>Explore the new capabilities introduces in html5.</p>
+        </header>
+
+        <nav>
+            <a href="#media">Media</a>
+            <a href="#drawing">Drawing</a>
+            <a href="#form">Form Controls</a>
+            <a href="#apis">APIs</a>
+        </nav>
+
+        <section id="content">
+            <article>
+                <h2>HTML5 Content Tags</h2>
+                <p>HTML5 introduces new semantic elements to better structure content:</p>
+                <ul>
+                    <li><b>&lt;header&gt;:</b> Represents the header section of the page.</li>
+                    <li><b>&lt;section&gt;:</b> Defines a section in the document.</li>
+                    <li><b>&lt;article&gt;:</b> Represents an independent piece of content.</li>
+                    <li><b>&lt;aside&gt;:</b> Represents additional content, like a sidebar.</li>
+                    <li><b>&lt;footer&gt;:</b> Defines the footer of the page.</li>
+                </ul>
+            </article>
+    
+            <aside>
+                <p>This is an example of an <b>&lt;aside&gt;</b> tag, often used for supplementary information or advertisements.</p>
+            </aside>
+        </section>
+
+        <section id="media">
+            <h2>HTML5 Media Tags</h2>
+            <p>Play audio and video directly in the browser:</p>
+    
+            <!-- New Media Tags -->
+            <video controls width="400">
+                <source src="sample.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <audio controls>
+                <source src="sample.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </section>
+
+        <section id="drawing">
+            <h2>HTML5 Canvas Tag</h2>
+            <p>The &lt;canvas&gt; tag allows dynamic 2D graphics:</p>
+            <canvas id="myCanvas" width="400" height="200"></canvas>
+            <script>
+                // Drawing on Canvas
+                const canvas = document.getElementById("myCanvas");
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(50, 50, 150, 100);
+                ctx.strokeStyle = "red";
+                ctx.strokeRect(200, 50, 150, 100);
+            </script>
+        </section>
+
+
+        <section id="form">
+            <h2>HTML5 New Form Controls</h2>
+            <form>
+                <label for="email">Email: </label>
+                <input type="email" id="email" placeholder="Enter your email" required><br><br>
+    
+                <label for="url">Website: </label>
+                <input type="url" id="url" placeholder="Enter your website"><br><br>
+    
+                <label for="date">Choose a date: </label>
+                <input type="date" id="date"><br><br>
+    
+                <label for="time">Choose a time: </label>
+                <input type="time" id="time"><br><br>
+    
+                <label for="search">Search: </label>
+                <input type="search" id="search" placeholder="Search..."><br><br>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+
+        <section id="apis">
+            <h2>HTML5 JavaScript API Support</h2>
+            <p>Examples of new JavaScript APIs:</p>
+            <ul>
+                <li><b>Geolocation API:</b> Get the user's location:</li>
+                <button onclick="getLocation()">Get Location</button>
+                <p id="location"></p>
+                <script>
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(
+                                position => {
+                                    document.getElementById("location").textContent =
+                                        `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+                                },
+                                error => {
+                                    document.getElementById("location").textContent =
+                                        "Unable to retrieve location.";
+                                }
+                            );
+                        } else {
+                            document.getElementById("location").textContent =
+                                "Geolocation is not supported by this browser.";
+                        }
+                    }
+                </script>
+                <li><b>Drag & Drop API:</b> Drag items within the page.</li>
+            </ul>
+            <div id="dragBox" draggable="true" style="width: 100px; height: 100px; background: orange; text-align: center; line-height: 100px;">
+                Drag Me
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2025 HTML5 Demo. All rights reserved.</p>
+        </footer>
+
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    table { border-collapse: collapse; width: 50%; margin: 20px auto; }
+    td { border: 1px solid #000; padding: 10px; text-align: center; }
+  </style>
+</head>
+<body>
+  <table>
+    <tr><td>Row 1</td><td>Row 1</td></tr>
+    <tr><td>Row 2</td><td>Row 2</td></tr>
+    <tr><td>Row 3</td><td>Row 3</td></tr>
+    <tr><td>Row 4</td><td>Row 4</td></tr>
+  </table>
+
+  <button id="highlightEven">Highlight Even Rows</button>
+  <button id="toggleRows">Toggle Visibility</button>
+
+  <script>
+    $(document).ready(function () {
+      // Filter: Highlight even rows
+      $("#highlightEven").click(function () {
+        $("tr:even").css("background-color", "lightblue");
+      });
+
+      // Traversing: Toggle visibility of rows
+      $("#toggleRows").click(function () {
+        $("tr").toggle(500);
+      });
+
+      // Add styling to the first row
+      $("tr:first").css("font-weight", "bold");
+
+      // Highlight cells with index > 1
+      $("td:gt(1)").css("color", "red");
+    });
+  </script>
+</body>
+</html>

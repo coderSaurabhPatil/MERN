@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Ajax Demo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="contentDiv">Default Content</div>
+  <button id="loadHtml">Load HTML</button>
+  <button id="loadJson">Load JSON</button>
+  <button id="postData">Post Data</button>
+
+  <script>
+    $(document).ready(function () {
+      // Load HTML content
+      $("#loadHtml").click(function () {
+        $("#contentDiv").load('GetContents.html', function (response, status, xhr) {
+          if (status === "error") {
+            alert("Error: " + xhr.statusText);
+          }
+        });
+      });
+
+      // Load JSON data
+      $("#loadJson").click(function () {
+        $.getJSON('GetContents.aspx', { id: 5 }, function (data) {
+          $("#contentDiv").html(JSON.stringify(data));
+        });
+      });
+
+      // Post data and display response
+      $("#postData").click(function () {
+        $.post('AddData.aspx', { name: 'Alice', age: 25 }, function (response) {
+          $("#contentDiv").html(response);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

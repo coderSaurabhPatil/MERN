@@ -1,0 +1,25 @@
+AJAX Request:
+Uses XMLHttpRequest to fetch data asynchronously from the placeholder API.
+JSON Parsing:
+The response from the API is in JSON format, parsed using JSON.parse.
+Dynamic Rendering:
+The fetched data is displayed dynamically in the HTML using innerHTML.
+
+
+Definition: JSON is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate.
+Data Types:
+String: "Hello, World!"
+Number: 123, 45.67
+Boolean: true, false
+Object: { "name": "John", "age": 30 }
+Array: [1, "text", true, { "key": "value" }]
+Null: null
+
+
+AJAX (Asynchronous JavaScript and XML)
+Definition: AJAX is a technique to send and retrieve data asynchronously without refreshing the webpage.
+Use Case: Frequently used for dynamic and seamless interactions with the server.
+
+ex-ajax_json.html
+
+----------------------------------------------------------------------------------------------

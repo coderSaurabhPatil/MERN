@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex Form Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .error { color: red; font-size: 0.9em; }
+    input { margin-bottom: 10px; display: block; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>User Registration</h2>
+  <form id="registrationForm">
+    <label>
+      Name:
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <span id="nameError" class="error"></span>
+    </label>
+    <label>
+      Email:
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <span id="emailError" class="error"></span>
+    </label>
+    <label>
+      Phone Number:
+      <input type="text" id="phone" placeholder="Enter your phone number" required>
+      <span id="phoneError" class="error"></span>
+    </label>
+    <label>
+      Password:
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <span id="passwordError" class="error"></span>
+    </label>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    // Form and input references
+    const form = document.getElementById('registrationForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+
+    // Error span references
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const passwordError = document.getElementById('passwordError');
+
+    // Regex Patterns
+    const nameRegex = /^[a-zA-Z\s]{3,30}$/; // Letters and spaces only, 3-30 characters
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
+    const phoneRegex = /^[0-9]{10}$/; // Exactly 10 digits
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Minimum 8 chars, 1 uppercase, 1 digit, 1 special char
+
+    // Validation function
+    const validateInput = (regex, value, errorElement, errorMessage) => {
+      if (!regex.test(value)) {
+        errorElement.textContent = errorMessage;
+        return false;
+      }
+      errorElement.textContent = '';
+      return true;
+    };
+
+    // Form submit handler
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate inputs
+      const isNameValid = validateInput(nameRegex, nameInput.value, nameError, 'Name must be 3-30 letters only.');
+      const isEmailValid = validateInput(emailRegex, emailInput.value, emailError, 'Invalid email format.');
+      const isPhoneValid = validateInput(phoneRegex, phoneInput.value, phoneError, 'Phone must be 10 digits.');
+      const isPasswordValid = validateInput(passwordRegex, passwordInput.value, passwordError, 
+        'Password must have 8+ chars, 1 uppercase, 1 digit, and 1 special char.');
+
+      // If all inputs are valid
+      if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid) {
+        alert('Registration successful!');
+        form.reset(); // Clear form inputs
+      }
+    });
+  </script>
+</body>
+</html>

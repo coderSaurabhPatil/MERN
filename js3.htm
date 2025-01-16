@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="title">Welcome to my Website</h1>
+        <button id="redirectBtn">Go to Google</button>
+
+        <script>
+            //DOM: change the content of the heading 
+            document.getElementById("title").innerHTML="hallo,dom and bom!";
+
+            //bom: Adding a redirect functionality
+            document.getElementById("redirectBtn").addEventListener("click",function(){
+                window.location.href = "https://www.google.com"; //Redirect to google
+            })
+        </script>
+    </body>
+</html>

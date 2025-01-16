@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Styling Example</title>
+        <style>
+              body {
+            background-color: #f0f0f0;
+            background-image: url('https://www.w3schools.com/w3images/lights.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+  /* CSS for Text Styling */
+  h1 {
+            text-align: center;
+            color: #FF6347;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+        p {
+            font-family: 'Verdana', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            text-indent: 50px;
+        }
+        /* CSS for List Styling */
+        ul {
+            list-style-type: square;
+            margin: 20px;
+            padding: 10px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .box {
+            padding: 20px;
+            margin: 15px;
+            border: 3px solid #FF6347;
+            background-color: #4CAF50;
+        }/* CSS for Border Radius */
+        .rounded-box {
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #f1c40f;
+        }
+        .shadow-box {
+            box-shadow: 5px 5px 10px rgba(109, 41, 41, 0.3);
+            padding: 20px;
+            background-color: #4e1515;
+        }
+        </style>
+
+    </head>
+    <body>
+        <h1>CSS Styling Example</h1>
+        <p>This is a sample paragraph to demonstrate text styling. The text is aligned to justify, with a small indentation at the start of each paragraph. The background image and colors have been applied to enhance the appearance.</p>
+        <div class="box">
+            This box demonstrates the box model with padding, margin, and border.
+        </div>
+        <div class="rounded-box">
+            This box has rounded corners due to the border-radius property.
+        </div>
+        <div class="shadow-box">
+            This box has a shadow effect applied using the box-shadow property.
+        </div>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </body>
+</html>

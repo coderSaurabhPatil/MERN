@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery Selectors Example</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            .highlight {
+              background-color: yellow;
+              font-weight: bold;
+            }
+          </style>
+
+
+    </head>
+
+    <body>
+        <p class="intro">this is paragraph with class 'intro'.</p>
+        <p id="first">this is paragraph with id 'first'.</p>
+        <a href="#" title="trainer">click me </a>
+        <table>
+            <tr>
+                <td>row 1</td>
+            </tr>
+            <tr>
+                <td>row 2</td>
+            </tr>
+        </table>
+        <input type="text" placeholder="Text input">
+        <input type="radio" name="choice"> radio button 1
+        <input type="radio" name="choice"> radio button 2
+
+        <script>
+            $(document).ready(function(){
+
+                //Select by class
+                $('.intro').addClass('highlight');
+
+                //Select by ID
+                $('#first').css('color','blue');
+
+                //Slect by attributr
+                $('a[title="trainer"]').text('Updated link text');
+
+                //Select input elements
+                $(':radio').prop('checked',true);
+
+            });
+        </script>
+    </body>
+</html>

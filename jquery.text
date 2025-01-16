@@ -1,0 +1,245 @@
+What is jQuery?
+
+Lightweight JavaScript library for DOM manipulation.
+Created by John Resig in 2006.
+Resolves cross-browser issues and simplifies client-side development.
+
+Key Features
+Simplifies DOM manipulation (e.g., add/remove elements, styles).
+Cross-browser compatibility (handles inconsistencies).
+Event handling (e.g., click, hover, etc.).
+Animations (fade in/out, slide).
+AJAX support (asynchronous requests).
+Method chaining for concise code.
+
+Why Use jQuery?
+Reduces the complexity of JavaScript.
+Makes web development faster and easier.
+Supports advanced effects with simple syntax.
+
+Including jQuery
+Local File:
+
+<script src="path/to/jquery.min.js"></script>
+CDN:
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ex-jq1.html
+
+-----------------------------------------------------------------------------------------
+
+ jQuery selectors
+
+  Selecting by Tag Name
+Syntax: $('tagName')
+Selects all elements of the specified tag.
+
+$('p').css('color', 'blue'); // Selects all <p> elements
+$('a').css('text-decoration', 'none'); // Selects all <a> elements
+$('p, a, span').css('background', 'lightgray'); // Selects <p>, <a>, and <span>
+
+Selecting Descendants
+Syntax: $('ancestor descendant')
+Selects all descendants (children, grandchildren, etc.) of the ancestor element.
+
+$('table tr').css('background', 'yellow'); // Selects all <tr> elements in <table>
+$('div p').css('font-size', '14px'); // Selects all <p> elements inside <div>
+
+Selecting by ID
+Syntax: $('#id')
+Selects the element with the specified id.
+
+$('#first').css('color', 'green'); // Selects the element with id="first"
+$('#myID').hide(); // Hides the element with id="myID"
+
+Selecting by Class Name
+Syntax: $('.className')
+Selects all elements with the specified class.  
+
+$('.intro').css('font-weight', 'bold'); // Selects all elements with class="intro"
+$('.blueDiv, .redDiv').css('border', '1px solid black'); // Multiple class selection
+$('div.myclass').css('padding', '10px'); // Selects only <div> with class="myclass"
+
+Selecting by Attribute
+Syntax: $('[attribute]') or $('[attribute=value]')
+Selects elements based on attributes and their values.
+
+$('a[title]').css('color', 'red'); // Selects all <a> with a title attribute
+$('a[title="trainer"]').css('font-size', '18px'); // Selects <a> with title="trainer"
+
+
+ Selecting Input Elements
+Syntax: $('input[type="type"]')
+Selects specific input elements.
+
+$(':input').css('margin', '5px'); // Selects all form elements
+$('input[type="text"]').css('background', 'yellow'); // Selects text inputs
+$(':radio').prop('checked', true); // Selects all radio buttons and checks them
+$(':password').css('border', '1px solid red'); // Selects password fields
+
+
+ex-jq2.html
+
+----------------------------------------------------------------------------------------------
+
+Short Note on jQuery Filters and Traversing
+jQuery provides various selectors and methods to filter, traverse, and manipulate HTML elements efficiently.
+
+Basic Filters
+Index-based Filters:
+
+:eq(n) – Select element at index n.
+Example: $("p:eq(1)").css("color", "red");
+:lt(n) – Select elements with index < n.
+:gt(n) – Select elements with index > n.
+Odd and Even:
+
+:odd – Selects odd-indexed elements.
+:even – Selects even-indexed elements.
+First/Last:
+
+:first, :last – Select the first or last matched element.
+Content Filters:
+
+:contains("text") – Select elements containing specific text.
+:empty – Select elements with no children.
+Tree Traversal Methods
+.children() – Direct children of selected elements.
+.find() – All descendants of selected elements.
+.next() / .prev() – Immediate next/previous sibling element.
+.parent() – Immediate parent of the selected element.
+Event Handling
+click() – Handles click events.
+hover() – Handles mouseenter and mouseleave events.
+on() / off() – Attach or remove multiple event handlers.
+Working with Attributes
+.attr() – Get/Set attributes.
+.removeAttr() – Remove attributes.
+CSS Manipulation
+.css() – Get/Set inline styles.
+Example: $("div").css("color", "blue");
+
+ex-jq3.html
+
+
+------------------------------------------------------------------------------------------
+
+The jQuery library includes a robust set of Ajax features that allow seamless communication with servers without requiring a page reload. These features work well with REST APIs, Web Services, and more.
+
+jQuery Ajax Functions
+.load()
+
+Loads HTML content from the server and inserts it into the selected element.
+
+Syntax:
+
+javascript
+Copy code
+$(selector).load(url, data, callback);
+Examples:
+
+Load full content:
+javascript
+Copy code
+$("#targetDiv").load('GetContents.html');
+Load specific content (e.g., #Main):
+javascript
+Copy code
+$("#targetDiv").load('GetContents.html #Main');
+Load with data:
+javascript
+Copy code
+$('#targetDiv').load('Add.aspx', { firstNumber: 5, secondNumber: 10 });
+$.get()
+
+Sends a GET request to retrieve data from the server.
+
+Syntax:
+
+javascript
+Copy code
+$.get(url, data, callback, dataType);
+Example:
+
+javascript
+Copy code
+$.get('GetContents.html', function (data) {
+  $('#targetDiv').html(data);
+}, 'html');
+$.post()
+
+Sends a POST request to send data to the server and retrieve results.
+
+Syntax:
+
+javascript
+Copy code
+$.post(url, data, callback, dataType);
+Example:
+
+javascript
+Copy code
+$.post('AddData.aspx', { name: 'John', age: 30 }, function (data) {
+  $('#targetDiv').html(data);
+}, 'html');
+$.getJSON()
+
+Sends a GET request to retrieve JSON data from the server.
+
+Syntax:
+
+javascript
+Copy code
+$.getJSON(url, data, callback);
+Example:
+
+javascript
+Copy code
+$.getJSON('GetContents.aspx', { id: 5 }, function (data) {
+  $('#targetDiv').html(JSON.stringify(data));
+});
+$.ajax()
+
+Provides a highly configurable method for making Ajax requests by assigning values to JSON properties.
+
+Syntax:
+
+javascript
+Copy code
+$.ajax({
+  url: 'serverUrl',
+  data: requestData,
+  contentType: 'application/json; charset=utf-8',
+  dataType: 'json',
+  success: function (data, status, xhr) {
+    // Handle success
+  },
+  error: function (xhr, status, error) {
+    // Handle error
+  },
+});
+Example:
+
+javascript
+Copy code
+$.ajax({
+  url: 'employee.asmx/GetEmployees',
+  data: null,
+  contentType: 'application/json; charset=utf-8',
+  dataType: 'json',
+  success: function (data, status, xhr) {
+    $('#targetDiv').html(data);
+  },
+  error: function (xhr, status, error) {
+    alert('Error: ' + error);
+  },
+});
+
+
+ex-jq4.html
+--------------------------------------------------------------------------------------------
+
+
+
+
